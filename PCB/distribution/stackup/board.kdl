@@ -1,0 +1,21 @@
+// Power distribution board: six identical terminals over shared V+ and GND planes. Any terminal can
+// be the input and the rest are outputs. No active or passive parts; every terminal is a 2-pole
+// WAGO 2601-1102 with pin 1 on V+ and pin 2 on GND.
+//
+// Whichever terminal is the input carries the sum of all the outputs. Keep the total within the
+// terminal's 10 A UL rating (17.5 A IEC); see parts.kdl.
+//
+// The four M3 mounting holes are board-only footprints in the KiCad layout, not parts here.
+use "parts.kdl"
+
+design distribution {
+    place wago-2601-1102 "J1" note="Power terminal (input or output)"
+    place wago-2601-1102 "J2" note="Power terminal (input or output)"
+    place wago-2601-1102 "J3" note="Power terminal (input or output)"
+    place wago-2601-1102 "J4" note="Power terminal (input or output)"
+    place wago-2601-1102 "J5" note="Power terminal (input or output)"
+    place wago-2601-1102 "J6" note="Power terminal (input or output)"
+
+    circuit "J1.1" "J2.1" "J3.1" "J4.1" "J5.1" "J6.1" name="VPWR"
+    circuit "J1.2" "J2.2" "J3.2" "J4.2" "J5.2" "J6.2" name="GND"
+}

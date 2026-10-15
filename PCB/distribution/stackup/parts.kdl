@@ -1,0 +1,31 @@
+// WAGO 2601-1102 PCB terminal block: lever-actuated Push-in CAGE CLAMP, 2-pole, 3.5 mm pitch,
+// wire entry parallel to the PCB (conductor connection direction to PCB 0°). The 2601-3102 is the
+// vertical, top-entry version and is not a substitute.
+//
+// Datasheet: WAGO 2601-1102 data sheet, version 25.01.2023 (PCB/datasheets/WAGO_2601-1102.pdf).
+// - Conductors: 0.14-1.5 mm² / 26-16 AWG solid, 0.2-1.5 mm² / 24-16 AWG fine-stranded; strip
+//   8-9 mm (p. 2).
+// - Rated current 17.5 A per IEC/EN 60664-1; 10 A per UL 1059 and CSA, Use Groups B and D (p. 2).
+// - Two solder pins per pole, in two rows 5 mm apart; 1.2 (+0.1) mm drilled hole (p. 1, p. 3).
+// WAGO does not number the poles. Pin 1 is the left pole seen from the wire-entry face, as in
+// KiCad's footprint, whose pad numbers each cover both solder pins of a pole.
+// The footprint is a copy of KiCad's TerminalBlock_WAGO_2601-1102_1x02_P3.50mm_Horizontal in
+// PCB/libraries/PowerBoards.pretty. The only change is that it points at WAGO's 3D model, because
+// KiCad ships none (see PCB/libraries/3dmodels/README.md).
+part wago-2601-1102 {
+    symbol "Connector:Screw_Terminal_01x02"
+    reference J
+    value "WAGO 2601-1102"
+    description "WAGO 2601 PCB terminal block, lever, Push-in CAGE CLAMP, 2-pole, 3.5 mm pitch, 1.5 mm² / 26-16 AWG, wire entry parallel to PCB, gray"
+    datasheet "https://www.wago.com/2601-1102"
+    manufacturer WAGO
+
+    pin 1 passive
+    pin 2 passive
+
+    package horizontal footprint="PowerBoards:WAGO_2601-1102_Horizontal" {
+        order mpn="2601-1102" lcsc=C7509568
+        pad 1 1
+        pad 2 2
+    }
+}

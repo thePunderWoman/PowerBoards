@@ -1,0 +1,78 @@
+# macOS metadata
+.DS_Store
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# Claude Code internal state
+.claude/
+
+# Python files
+__pycache__/
+*.pyc
+
+# KiCad temporary files
+PCB/**/*.000
+PCB/**/*.bak
+PCB/**/*.bck
+PCB/**/*.kicad_pcb-bak
+PCB/**/*.kicad_sch-bak
+PCB/**/*-backups
+PCB/**/*-cache*
+PCB/**/*-bak
+PCB/**/*-bak*
+PCB/**/*~
+PCB/**/~*
+PCB/**/_autosave-*
+PCB/**/\#auto_saved_files\#
+PCB/**/*.tmp
+PCB/**/*-save.pro
+PCB/**/*-save.kicad_pcb
+fp-info-cache
+~*.lck
+
+# Netlist files (exported from Eeschema)
+PCB/**/*.net
+
+# Autorouter files (exported from Pcbnew)
+PCB/**/*.dsn
+PCB/**/*.ses
+
+# Exported BOM files (the committed production BOM is the exception)
+PCB/**/*.xml
+PCB/**/*.csv
+!PCB/*/production/bom/*.csv
+
+# Archived Backups (KiCad 6.0)
+PCB/**/*-backups/*.zip
+
+# Local git-based history (KiCad 9.0+)
+PCB/**/.history
+
+# Local project settings
+PCB/**/*.kicad_prl
+
+# Production reports
+PCB/*/production/misc/*
+
+# ERC report JSON scratch files (from kicad-cli sch erc)
+PCB/**/erc*.json
+PCB/**/full_erc*.json
+
+# Local Stackup library checkout for development
+manifest.local.kdl
+.stackup/
+ci/stackup/target/
+
+# ngspice scratch output
+scripts/spice/**/*.raw
+scripts/spice/**/*.log
+
+# Datasheet text extracted by datasheet.py (regenerable from the PDFs)
+PCB/datasheets/*.txt
+
+# Manufacturer 3D models whose terms forbid redistribution (download steps in
+# PCB/libraries/3dmodels/README.md)
+PCB/libraries/3dmodels/WAGO_*.stp
+PCB/libraries/3dmodels/*.zip

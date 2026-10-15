@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "PowerBoards") (type "KiCad") (uri "${KIPRJMOD}/../libraries/PowerBoards.pretty") (options "") (descr "Project footprints shared by all boards"))
+)
